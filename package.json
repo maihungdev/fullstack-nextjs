@@ -1,0 +1,14 @@
+{
+  "name": "shopdux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd backend && npm run backend",
+    "frontend": "cd frontend && npm run build && npm run frontend",
+    "setupBackend": "cd backend && npm i",
+    "setupFrontend": "cd frontend && npm i"
+  },
+  "author": "maihungdev <crabfaddy@gmail.com>",
+  "license": "MIT"
+}

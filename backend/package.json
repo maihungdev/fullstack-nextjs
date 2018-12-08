@@ -1,0 +1,88 @@
+{
+  "name": "graphql-compose-examples",
+  "version": "1.0.0",
+  "description": "Examples of graphql-compose",
+  "engines": {
+    "node": "10.13.0",
+    "yarn": "1.12.3"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodkz/graphql-compose-examples.git"
+  },
+  "keywords": [
+    "graphql",
+    "graphql-compose",
+    "graphql-compose-mongoose",
+    "graphql-compose-elasticsearch",
+    "graphql-compose-aws"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodkz/graphql-compose-examples/issues"
+  },
+  "homepage": "https://github.com/nodkz/graphql-compose-examples",
+  "dependencies": {
+    "@babel/node": "^7.0.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "aws-sdk": "^2.308.0",
+    "cors": "^2.8.4",
+    "elasticsearch": "^15.1.1",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "14.0.0",
+    "graphql-compose": "^5.0.2",
+    "graphql-compose-aws": "^2.0.0",
+    "graphql-compose-connection": "^4.0.0",
+    "graphql-compose-elasticsearch": "^2.0.0",
+    "graphql-compose-mongoose": "^5.0.0",
+    "graphql-compose-pagination": "^4.0.0",
+    "graphql-compose-relay": "^3.0.0",
+    "graphql-playground-middleware-express": "^1.7.3",
+    "mongoose": "^5.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "flow-bin": "0.80.0",
+    "jest": "^23.5.0",
+    "mongodb-memory-server": "^2.1.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
+    "request": "^2.88.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/module"
+    ]
+  },
+  "scripts": {
+    "build": "npm run buildSchema",
+    "seed": "./node_modules/.bin/babel-node ./scripts/seed.js",
+    "buildSchema": "./node_modules/.bin/babel-node ./scripts/buildSchema.js",
+    "start": "npm run seed && babel-node index.js",
+    "start:watch": "nodemon index.js -e js --exec babel-node",
+    "backend": "pm2 start backend.js",
+    "watch": "jest --watch",
+    "coverage": "jest --coverage --maxWorkers 2",
+    "lint": "eslint --ext .js ./examples",
+    "flow": "./node_modules/.bin/flow",
+    "test": "npm run coverage && npm run lint && npm run flow"
+  }
+}

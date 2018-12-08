@@ -1,0 +1,47 @@
+{
+  "name": "shopdux",
+  "version": "1.0.0",
+  "description": "An example project for next-auth",
+  "repository": "https://github.com/iaincollins/next-auth.git",
+  "main": "",
+  "scripts": {
+    "dev": "NODE_ENV=development node index.js",
+    "frontend": "NODE_ENV=production pm2 start index.js",
+    "build": "next build",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.11.0",
+    "apollo-boost": "^0.1.22",
+    "babel-plugin-import": "^1.11.0",
+    "connect-mongo": "^2.0.3",
+    "dotenv": "^6.1.0",
+    "express-session": "^1.15.6",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "mobx": "^5.7.0",
+    "mobx-react": "^5.4.2",
+    "mobx-state-tree": "^3.9.0",
+    "mongodb": "^3.1.10",
+    "nedb": "^1.8.0",
+    "next": "^7.0.2",
+    "next-auth": "^1.12.1",
+    "nextjs-dynamic-routes": "^2.2.1",
+    "nodemailer": "^4.7.0",
+    "nodemailer-direct-transport": "^3.3.2",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "react": "^16.6.3",
+    "react-apollo": "^2.3.2",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.2.0"
+  }
+}
