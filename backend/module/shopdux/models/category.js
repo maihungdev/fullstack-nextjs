@@ -6,16 +6,23 @@ import { ProductTC } from './product';
 
 export const CategorySchema = new mongoose.Schema(
   {
-    categoryID: {
-      type: Number,
-      description: 'Category unique ID',
-      unique: true,
+    _id:{
+      type: mongoose.Schema.Types.ObjectId
     },
     name: {
-      type: String,
-      unique: true,
+      type: String
     },
-    description: String,
+    slug: {
+      type: String,
+      unique: true
+    },
+    image: {
+      type: String,
+    },
+    parent_id: {
+      type: mongoose.Schema.Types.ObjectId
+    },
+    enabled: Boolean,
   },
   {
     collection: 'db_categories',
@@ -26,18 +33,12 @@ export const Category = mongoose.model('Category', CategorySchema);
 
 export const CategoryTC = composeWithRelay(composeWithMongoose(Category));
 
-CategoryTC.addRelation('productConnection', {
-  resolver: () => ProductTC.getResolver('connection'),
-  prepareArgs: {
-    filter: source => ({ categoryID: source.categoryID }),
-  },
-  projection: { categoryID: true },
-});
-
-CategoryTC.addRelation('productList', {
+CategoryTC.addRelation('product', {
   resolver: () => ProductTC.getResolver('findMany'),
   prepareArgs: {
-    filter: source => ({ categoryID: source.categoryID }),
+    filter: source => ({ category_id: source._id }),
+    skip: null,
+    sort: null,
   },
-  projection: { categoryID: true },
+  projection: { _id: true },
 });

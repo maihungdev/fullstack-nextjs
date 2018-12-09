@@ -12,11 +12,10 @@ import { CategoryTC } from './models/category';
 import { CustomerTC } from './models/customer';
 import { EmployeeTC } from './models/employee';
 import { OrderTC } from './models/order';
-import { ProductTC } from './models/product';
 import { RegionTC } from './models/region';
 import { ShipperTC } from './models/shipper';
 import { SupplierTC } from './models/supplier';
-import { pdTC } from './models/pd';
+import { ProductTC } from './models/product';
 import allowOnlyForLocalhost from './auth/allowOnlyForLocalhost';
 
 composeWithRelay(schemaComposer.Query);
@@ -33,10 +32,12 @@ schemaComposer.Query.addFields({
 const fields = {
   category: CategoryTC.getResolver('findOne'),
   categoryList: CategoryTC.getResolver('findMany'),
+  categoryConnection: CategoryTC.getResolver('connection'),
 
-  pd: pdTC.getResolver('findOne'),
-  pdList: pdTC.getResolver('findMany'),
-  pdPagination: pdTC.getResolver("pagination"),
+  product: ProductTC.getResolver('findOne'),
+  productsList: ProductTC.getResolver('findMany'),
+  productsPagination: ProductTC.getResolver("pagination"),
+  productConnection: ProductTC.getResolver('connection'),
 
   customer: CustomerTC.getResolver('findOne'),
   customerConnection: CustomerTC.getResolver('connection'),
@@ -46,10 +47,6 @@ const fields = {
 
   order: OrderTC.getResolver('findOne'),
   orderConnection: OrderTC.getResolver('connection'),
-
-  product: ProductTC.getResolver('findOne'),
-  productList: ProductTC.getResolver('findMany'),
-  productConnection: ProductTC.getResolver('connection'),
 
   region: RegionTC.getResolver('findOne'),
   regionList: RegionTC.getResolver('findMany'),
@@ -69,9 +66,8 @@ ViewerTC.addFields(fields);
 schemaComposer.Mutation.addFields({
   ...allowOnlyForLocalhost({
     createProduct: ProductTC.get('$createOne'),
-    createpd: pdTC.get('$createOne'),
-    productUpdateById: pdTC.getResolver('updateById'),
-    pd: pdTC.get('$createOne'),
+    createProduct: ProductTC.get('$createOne'),
+    productUpdateById: ProductTC.getResolver('updateById'),
     createCustomer: CustomerTC.get('$createOne'),
     removeProductById: ProductTC.get('$removeById'),
     supplierUpdateById: SupplierTC.getResolver('updateById'),
