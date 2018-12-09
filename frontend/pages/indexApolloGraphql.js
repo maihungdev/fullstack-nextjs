@@ -2,7 +2,7 @@ import { Component } from "react";
 import { inject, observer } from "mobx-react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-
+import { Skeleton, Button } from "antd";
 const allPostsQuery = gql`
   {
     viewer {
@@ -22,15 +22,26 @@ class Index extends Component {
     console.log("index PROPS", this.props);
     return (
       <Query query={allPostsQuery}>
-        {({ data: { viewer } }) => {
-          console.log("allPosts", viewer);
+        {({ data, loading }) => {
+          const { viewer } = data;
+          if (loading || !viewer) {
+            return (
+              <div>
+                <Skeleton active />
+              </div>
+            );
+          }
           return (
             <div>
-              Hello Next.js
               {viewer &&
                 viewer.employeeList.map(post => {
-                  return <p key={post._id}>{post.firstName} {post.lastName}</p>;
-                })}
+                  return (
+                    <p key={post._id}>
+                      {post.firstName} {post.lastName}
+                    </p>
+                  );
+                })
+                }
             </div>
           );
         }}
@@ -39,4 +50,4 @@ class Index extends Component {
   }
 }
 
-export default Index
+export default Index;

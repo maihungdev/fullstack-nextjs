@@ -18,6 +18,7 @@ export default HeaderMain => (
       <Menu.Item key="4"><Link href="/antd"><a>Antd</a></Link></Menu.Item>
       <Menu.Item key="5"><Link href="/indexRoute"><a>Route</a></Link></Menu.Item>
       <Menu.Item key="6"><Link href="/indexApolloGraphql"><a>Apollo Graphql</a></Link></Menu.Item>
+      <Menu.Item key="7"><Link href="/seo"><a>SEO</a></Link></Menu.Item>
     </Menu>
   </Header>
 );

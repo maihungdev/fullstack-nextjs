@@ -6,10 +6,16 @@ import { initializeStore } from '../stores/store'
 import Head from "next/head";
 import withApollo from '../lib/withApollo'
 import { ApolloProvider } from 'react-apollo'
+import NextSeo from 'next-seo';
+
+// import your default seo configuration
+import SEO from '../next-seo.config';
+
 import HeaderMain from "../components/HeaderMain";
 import FooterMain from "../components/FooterMain";
 import { Layout } from "antd";
 const { Content } = Layout;
+
 class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
     //
@@ -42,9 +48,7 @@ class MyApp extends App {
     const { Component, pageProps, apolloClient } = this.props
     return (
       <Container>
-        <Head>
-          <title>My page</title>
-        </Head>
+         <NextSeo config={SEO} />
         <ApolloProvider client={apolloClient}>
         <Provider store={this.store}>
         <Layout>
