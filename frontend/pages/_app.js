@@ -3,7 +3,8 @@ import { Provider } from 'mobx-react'
 import { getSnapshot } from 'mobx-state-tree'
 import App, { Container } from 'next/app'
 import { initializeStore } from '../stores/store'
-import Head from "next/head";
+import NProgress from 'nprogress'
+import Router from 'next/router'
 import withApollo from '../lib/withApollo'
 import { ApolloProvider } from 'react-apollo'
 import NextSeo from 'next-seo';
@@ -15,6 +16,13 @@ import HeaderMain from "../components/HeaderMain";
 import FooterMain from "../components/FooterMain";
 import { Layout } from "antd";
 const { Content } = Layout;
+
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+  NProgress.start()
+})
+Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
