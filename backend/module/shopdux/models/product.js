@@ -2,6 +2,7 @@ import mongoose, { mongo } from "mongoose";
 import { composeWithMongoose, composeWithRelay } from "../schemaComposer";
 import { __values } from "tslib";
 import { CategoryTC } from './category';
+import { VendorTC } from './vendor';
 
 // define
 
@@ -81,6 +82,9 @@ export const productsSchema = new mongoose.Schema(
       description: "Slug product unique",
       unique: true
     },
+    vendor_id: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
     category_id: {
       type: mongoose.Schema.Types.ObjectId,
     },
@@ -147,6 +151,16 @@ ProductTC.addRelation('category', {
   resolver: () => CategoryTC.getResolver('findOne'),
   prepareArgs: {
     filter: source => ({ _id: source.category_id }),
+    skip: null,
+    sort: null,
+  },
+  projection: { _id: true },
+});
+
+ProductTC.addRelation('vendor', {
+  resolver: () => VendorTC.getResolver('findOne'),
+  prepareArgs: {
+    filter: source => ({ _id: source.vendor_id }),
     skip: null,
     sort: null,
   },

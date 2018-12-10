@@ -14,7 +14,7 @@ import { EmployeeTC } from './models/employee';
 import { OrderTC } from './models/order';
 import { RegionTC } from './models/region';
 import { ShipperTC } from './models/shipper';
-import { SupplierTC } from './models/supplier';
+import { VendorTC } from './models//vendor';
 import { ProductTC } from './models/product';
 import allowOnlyForLocalhost from './auth/allowOnlyForLocalhost';
 
@@ -54,9 +54,9 @@ const fields = {
   shipper: ShipperTC.getResolver('findOne'),
   shipperList: ShipperTC.getResolver('findMany'),
 
-  supplier: SupplierTC.getResolver('findOne'),
-  supplierList: ShipperTC.getResolver('findMany'),
-  supplierConnection: SupplierTC.getResolver('connection')
+  vendor: VendorTC.getResolver('findOne'),
+  vendorList: VendorTC.getResolver('findMany'),
+  vendorConnection: VendorTC.getResolver('connection')
 
 };
 
@@ -70,7 +70,7 @@ schemaComposer.Mutation.addFields({
     productUpdateById: ProductTC.getResolver('updateById'),
     createCustomer: CustomerTC.get('$createOne'),
     removeProductById: ProductTC.get('$removeById'),
-    supplierUpdateById: SupplierTC.getResolver('updateById'),
+    vendorUpdateById: VendorTC.getResolver('updateById'),
   }),
 });
 

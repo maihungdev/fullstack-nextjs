@@ -1,11 +1,10 @@
 import { Component } from "react";
 import { inject, observer } from "mobx-react";
-import { Query } from "react-apollo";
+import { Query, Mutation } from "react-apollo";
 import gql from "graphql-tag";
-import { Skeleton, Pagination, Select } from "antd";
+import { Skeleton, Pagination, Select, Button } from "antd";
 
 const Option = Select.Option;
-
 
 const getAllCategory = gql`
   {
@@ -37,6 +36,21 @@ const allPostsQuery = gql`
   }
 `;
 
+const PRODUCT_MUTATION = gql`
+  mutation($idCategory: MongoID!) {
+    productUpdateById(
+      input: {
+        record: { _id: "5c022fd2f8c597099478c3c9", category_id: $idCategory }
+      }
+    ) {
+      record {
+        category_id
+        name
+      }
+    }
+  }
+`;
+
 function itemRender(current, type, originalElement) {
   if (type === "prev") {
     return <a>Previous</a>;
@@ -51,16 +65,16 @@ function itemRender(current, type, originalElement) {
 @observer
 class Index extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-       category: ''
-    }
+      category: ""
+    };
   }
-  //handleChange = e => this.setState({ category: e.value });
-  handleChange = e => this.setState({category: e});
+  handleChange = e => this.setState({ idCategory: e });
   render() {
-    console.log("index PROPS", this.state.category);
+    console.log("index PROPS", this.state.idCategory);
+    const { idCategory } = this.state;
     return (
       <div>
         <Query query={getAllCategory}>
@@ -115,6 +129,14 @@ class Index extends Component {
             );
           }}
         </Query>
+        <hr />
+        <Mutation mutation={PRODUCT_MUTATION} variables={{ idCategory }}>
+          {postMutation => (
+            <Button type="primary" onClick={postMutation}>
+              Chang Category
+            </Button>
+          )}
+        </Mutation>
       </div>
     );
   }
