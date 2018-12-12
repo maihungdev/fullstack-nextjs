@@ -11,7 +11,7 @@ export default class Category extends Component {
             <div className="container">
               <div className="nav-shop">
                 <div className="shop-title-wrapper">
-                  <h1 className="entry-title">Shop</h1>
+                  <h1 className="entry-title">{this.props.title}</h1>
                 </div>
                 <div className="woodmart-show-categories"><a href="#">Categories</a></div>
                 <ul className="woodmart-product-categories has-product-count">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from '../store'
 import Cart from './Cart';
+import ListCategory from './client/header/ListCategory';
 
 
 class Header extends Component {
@@ -10,7 +11,7 @@ class Header extends Component {
 
   }
   onClick = () => {
-    this.child.showDrawer() // do stuff
+    this.child.showDrawer() 
   }
  render() {
   return (
@@ -22,36 +23,7 @@ class Header extends Component {
             <div className="whb-flex-row whb-top-bar-inner">
               <div className="whb-column whb-col-left whb-visible-lg">
                 <div className="whb-divider-element whb-divider-stretch " />
-                <div className="whb-navigation whb-secondary-menu site-navigation woodmart-navigation menu-right navigation-style-bordered" role="navigation">
-                  <div className="menu-top-bar-right-container">
-                    <ul id="menu-top-bar-right" className="menu">
-                      <li id="menu-item-2185" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2185 item-level-0 menu-item-design-default menu-simple-dropdown item-event-hover">
-                        <a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">ENGLISH</span></a>
-                        <div className="sub-menu-dropdown color-scheme-dark">
-                          <div className="container">
-                            <ul className="sub-menu color-scheme-dark">
-                              <li id="menu-item-2186" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">Deutsch</span></a></li>
-                              <li id="menu-item-2187" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2187 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">French</span></a></li>
-                              <li id="menu-item-11999" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-11999 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">Requires WPML plugin</span></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li id="menu-item-2188" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2188 item-level-0 menu-item-design-default menu-simple-dropdown item-event-hover">
-                        <a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">COUNTRY</span></a>
-                        <div className="sub-menu-dropdown color-scheme-dark">
-                          <div className="container">
-                            <ul className="sub-menu color-scheme-dark">
-                              <li id="menu-item-2190" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2190 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">United States (USD)</span></a></li>
-                              <li id="menu-item-11998" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-11998 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">Deutschland (EUR)</span></a></li>
-                              <li id="menu-item-2189" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2189 item-level-1"><a href="http://#" className="woodmart-nav-link"><span className="nav-link-text">Japan (JPY)</span></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <ListCategory/>
                 <div className="whb-divider-element whb-divider-stretch " />
                 <div className="whb-text-element reset-mb-10 "><strong>FREE SHIPPING FOR ALL ORDERS OF $150</strong></div>
               </div>

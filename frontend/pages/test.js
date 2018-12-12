@@ -28,7 +28,6 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        <Category/>
         <button onClick={() => this.increment()}>+1</button>
         <button onClick={() => this.addCart("id6","sp6", 400)}>Add</button>
         <Drawer

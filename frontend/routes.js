@@ -4,6 +4,8 @@ const router = new Router()
  
 router.add({ name: 'character', pattern: '/characters/:id' })
 
+router.add({ name: 'category', pattern: '/category/:slug' })
+
 router.add({ name: 'character-and-film', pattern: '/character-and-film/:characterId/:filmId' })
  
 router.add({ name: 'film', pattern: '/films/:id' })

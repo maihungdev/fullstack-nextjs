@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from '../routes'
+import { Link } from '../../../routes'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -15,7 +15,7 @@ const getAllCategory = gql`
   }
 `;
 
-class listCategory extends Component {
+class ListCategory extends Component {
   render() {
     return (
       <>
@@ -35,7 +35,7 @@ class listCategory extends Component {
                     <>
                     {viewer && viewer.categoryList.map(
                         item => {
-                            return <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186 item-level-1" key={item._id}><Link route="category" id={item.slug}><a href="#" className="woodmart-nav-link"><span className="nav-link-text">{item.name}</span></a></Link></li>
+                            return <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186 item-level-1" key={item._id}><Link route="category" slug={item.slug}><a href="#" className="woodmart-nav-link"><span className="nav-link-text">{item.name}</span></a></Link></li>
                         }
                     )}
                     </>
@@ -55,5 +55,5 @@ class listCategory extends Component {
   }
 }
 
-export default listCategory;
+export default ListCategory;
 
