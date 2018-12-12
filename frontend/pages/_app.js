@@ -13,8 +13,6 @@ import SEO from '../next-seo.config';
 
 //import HeaderMain from "../components/HeaderMain";
 import FooterMain from "../components/FooterMain";
-import { Layout } from "antd";
-const { Content } = Layout;
 import { Header } from "../components";
 
 const GlobalStorePersist = connect(props => (
@@ -59,9 +57,7 @@ class MyApp extends App {
          <GlobalStorePersist />
         <ApolloProvider client={apolloClient}>
         <Header/>
-                <Content style={{ padding: "0 10px", marginTop: 64 }}>
           <Component {...pageProps} />
-          </Content>
                 <FooterMain />    
         </ApolloProvider>
         </GlobalStore>

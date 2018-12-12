@@ -42,3 +42,12 @@ CategoryTC.addRelation('product', {
   },
   projection: { _id: true },
 });
+CategoryTC.addRelation('rootCategory', {
+  resolver: () => CategoryTC.getResolver('findOne'),
+  prepareArgs: {
+    filter: source => ({ _id: source.parent_id }),
+    skip: null,
+    sort: null,
+  },
+  projection: { _id: true },
+});
