@@ -1,6 +1,5 @@
 import ItemProduct from "../components/client/grid/ItemProduct";
 import GridHeader from "../components/client/grid/GridHeader";
-import "../static/style.css"
 export default class App extends React.Component {
   render() {
     return <><div className="woodmart-products-tabs tabs-wd-5c003e1e0b459 tabs-design-simple ">

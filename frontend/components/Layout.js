@@ -11,6 +11,7 @@ export default ({ title, children }) =>
     </Head>
     <style jsx global>{`
       body {
+         
       }
     `}</style>
     <LocaleProvider locale={enUS}>

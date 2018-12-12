@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { inject, observer } from "mobx-react";
 import { Query, Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import { Skeleton, Pagination, Select, Button } from "antd";
@@ -61,8 +60,6 @@ function itemRender(current, type, originalElement) {
   return originalElement;
 }
 
-@inject("store")
-@observer
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +70,6 @@ class Index extends Component {
   }
   handleChange = e => this.setState({ idCategory: e });
   render() {
-    console.log("index PROPS", this.state.idCategory);
     const { idCategory } = this.state;
     return (
       <div>

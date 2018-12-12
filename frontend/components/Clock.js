@@ -1,16 +1,15 @@
-export default (props) => {
+export default ({ clock: { state: { lastUpdate, light } } }) => {
   return (
-    <div className={props.light ? 'light' : ''}>
-      {format(new Date(props.lastUpdate))}
+    <div className={light ? 'light' : ''}>
+      {format(new Date(lastUpdate))}
       <style jsx>{`
         div {
           padding: 15px;
-          color: #82FA58;
           display: inline-block;
+          color: #82FA58;
           font: 50px menlo, monaco, monospace;
           background-color: #000;
         }
-
         .light {
           background-color: #999;
         }

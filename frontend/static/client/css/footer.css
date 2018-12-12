@@ -1,0 +1,108 @@
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.fa-envelope-o:before{content:"\f003";}
+.fa-mobile:before{content:"\f10b";}
+.fa-location-arrow:before{content:"\f124";}
+.fa-copyright:before{content:"\f1f9";}
+*,*::before,*::after{box-sizing:inherit;}
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+@media (min-width:576px){
+.container{max-width:100%;}
+}
+@media (min-width:769px){
+.container{max-width:100%;}
+}
+@media (min-width:1025px){
+.container{max-width:100%;}
+}
+@media (min-width:1200px){
+.container{max-width:1222px;}
+}
+.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+.col-12,.col-sm-4,.col-sm-6,.col-lg-2,.col-lg-3{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px;}
+.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;}
+@media (min-width:576px){
+.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%;}
+.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;}
+}
+@media (min-width:1025px){
+.col-lg-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%;}
+.col-lg-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%;}
+}
+a,aside,body,div,footer,h5,i,img,li,p,small,span,strong,time,ul{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline;}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box;}
+ul{list-style:none;}
+a img{border:none;}
+aside,footer{display:block;}
+a{-ms-touch-action:manipulation;touch-action:manipulation;}
+body{overflow-x:hidden;margin:0;line-height:1.6;font-size:14px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;color:#777;background-color:#fff;}
+p{margin-bottom:20px;}
+a{color:#3f3f3f;text-decoration:none;-webkit-transition:all .25s ease;transition:all .25s ease;}
+a:active,a:focus,a:hover{text-decoration:none;outline:0;}
+a:focus{outline:0;}
+h5 a{color:inherit;font-family:inherit;}
+h5{font-size:16px;}
+strong{font-weight:600;}
+small{font-size:80%;}
+img{max-width:100%;height:auto;vertical-align:middle;border:0;}
+ul{line-height:1.4;}
+svg:not(:root){overflow:hidden;}
+i.fa:before{margin-left:1px;margin-right:1px;}
+.color-scheme-dark{color:#777;}
+.color-scheme-dark a{color:#3f3f3f;}
+.color-scheme-dark .widget-title,.color-scheme-dark h5{color:#2d2a2a;}
+.reset-mb-10>:last-child{margin-bottom:0;}
+.footer-sidebar{padding-top:40px;padding-bottom:10px;}
+.footer-column{margin-bottom:30px;}
+.copyrights-wrapper{border-top:1px solid;}
+.min-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:20px;padding-bottom:20px;margin-left:-15px;margin-right:-15px;}
+.min-footer>div{-webkit-box-flex:1;-ms-flex:1 0 50%;flex:1 0 50%;max-width:50%;padding-left:15px;padding-right:15px;line-height:1.2;}
+.min-footer .col-right{text-align:right;}
+.widget,.woodmart-widget{line-height:1.4;}
+.widget a,.woodmart-widget a{color:#727272;}
+.widget a:hover,.woodmart-widget a:hover{color:#333;}
+.widget li,.woodmart-widget li{margin-bottom:15px;}
+.widget li:last-child,.woodmart-widget li:last-child{margin-bottom:0;}
+.color-scheme-dark .widget a,.color-scheme-dark .woodmart-widget a{color:#727272;}
+.color-scheme-dark .widget a:hover,.color-scheme-dark .woodmart-widget a:hover{color:#333;}
+.widget{margin-bottom:30px;padding-bottom:30px;border-bottom:1px solid;}
+.widget:last-child{padding-bottom:0;margin-bottom:0;border-bottom:none;}
+.widget-title{font-size:16px;text-transform:uppercase;font-weight:600;color:#2d2a2a;margin-bottom:20px;}
+.woodmart-recent-posts li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid;}
+.woodmart-recent-posts li:last-child{border:none;padding-bottom:0;margin-bottom:0;}
+.woodmart-recent-posts .recent-posts-thumbnail{overflow:hidden;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-right:15px;}
+.woodmart-recent-posts .recent-posts-thumbnail img{min-width:60px;}
+.woodmart-recent-posts .recent-posts-info{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;}
+.woodmart-recent-posts .entry-title{font-size:14px;margin-bottom:8px;}
+.woodmart-recent-posts .recent-posts-comment,.woodmart-recent-posts .recent-posts-time{font-size:12px;color:#bbb;}
+.woodmart-recent-posts .recent-posts-time{margin-right:5px;}
+.widget_text .textwidget>:last-child{margin-bottom:0;}
+.copyrights-wrapper,.widget,.woodmart-recent-posts li{border-color:rgba(129,129,129,.2);}
+.color-scheme-dark a:hover,a:hover,h5 a:hover{color:#7eb934;}
+body{font-family:lato,Arial,Helvetica,sans-serif;}
+h5{font-family:Poppins,Arial,Helvetica,sans-serif;}
+.woodmart-recent-posts .entry-title a{font-family:Poppins,"MS Sans Serif",Geneva,sans-serif;}
+h5{color:#2d2a2a;font-weight:600;margin-bottom:20px;line-height:1.4;display:block;}
+.woodmart-recent-posts .entry-title a{word-wrap:break-word;font-weight:500;line-height:1.3;}
+.woodmart-recent-posts .entry-title a{color:#333;}
+.woodmart-recent-posts .entry-title a:hover{color:rgba(51,51,51,.7);}
+@media (min-width:1025px){
+.container{width:95%;}
+}
+@media (max-width:1024px){
+.min-footer{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;text-align:center;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.min-footer .col-right{text-align:center;}
+.min-footer>div{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%;margin-bottom:15px;}
+.min-footer>div:last-child{margin-bottom:0;}
+}
+@media (max-width:1024px){
+.footer-logo{max-width:260px!important;}
+}
+
+.footer-container{background-color:#fff;}
+body{font-family:Lato,Arial,Helvetica,sans-serif;}
+h5{font-family:Ubuntu;}
+.woodmart-recent-posts .entry-title a{font-family:Ubuntu;}
+.widget-title{font-family:Ubuntu;}
+a:hover,h5 a:hover,.color-scheme-dark a:hover{color:#DB3340;}
+body{background-color:#ebf4eb;}

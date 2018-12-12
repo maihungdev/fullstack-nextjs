@@ -25,7 +25,6 @@
     "isomorphic-unfetch": "^3.0.0",
     "mobx": "^5.7.0",
     "mobx-react": "^5.4.2",
-    "mobx-state-tree": "^3.9.0",
     "mongodb": "^3.1.10",
     "nedb": "^1.8.0",
     "next": "^7.0.2",
@@ -41,7 +40,8 @@
     "passport-twitter": "^1.0.4",
     "react": "^16.6.3",
     "react-apollo": "^2.3.2",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "unstated": "^2.1.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.2.0"
