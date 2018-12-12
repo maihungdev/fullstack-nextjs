@@ -1,6 +1,6 @@
 import { Drawer, Button } from 'antd';
 import { connect } from '../store'
-
+import Category from '../components/client/category/Category';
 class Test extends React.Component {
   constructor(props) {
     super(props)
@@ -28,7 +28,7 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        <div className="woodmart-shopping-cart woodmart-cart-design-2 woodmart-cart-alt cart-widget-opener" onClick={this.showDrawer}>  <span className="woodmart-cart-wrapper"> <span className="woodmart-cart-icon"> </span> <span className="woodmart-cart-totals">       <span className="woodmart-cart-number">id1111{/* */} <span>items </span></span><span className="subtotal-divider">/</span>       <span className="woodmart-cart-subtotal"><span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>807.00</span></span></span> </span></div>
+        <Category/>
         <button onClick={() => this.increment()}>+1</button>
         <button onClick={() => this.addCart("id6","sp6", 400)}>Add</button>
         <Drawer
