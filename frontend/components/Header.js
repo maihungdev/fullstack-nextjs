@@ -1,4 +1,19 @@
-export default ({ counter }) =>  (
+import React, { Component } from 'react'
+import { connect } from '../store'
+import Cart from './Cart';
+
+
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.store = props.store
+
+  }
+  onClick = () => {
+    this.child.showDrawer() // do stuff
+  }
+ render() {
+  return (
     <div className="website-wrapper">
     <header className="whb-header whb-sticky-shadow whb-scroll-slide whb-sticky-clone">
       <div className="whb-main-header">
@@ -155,10 +170,28 @@ export default ({ counter }) =>  (
                   </ul>
                 </div>
                 <div className="woodmart-wishlist-info-widget whb-wishlist-icon without-product-count" title="My Wishlist"> <a href="https://woodmart.xtemos.com/wishlist/demo/retail/"> <span className="wishlist-info-wrap"> <span className="wishlist-icon"> </span> <span className="wishlist-label"> Wishlist </span> </span> </a></div>
-                <div className="woodmart-shopping-cart woodmart-cart-design-2 woodmart-cart-alt cart-widget-opener"> <a href="https://woodmart.xtemos.com/cart/demo/retail/"> <span className="woodmart-cart-wrapper"> <span className="woodmart-cart-icon"> </span> <span className="woodmart-cart-totals"> 						<span className="woodmart-cart-number">{counter.state.count} <span>items</span></span>
-                        <span className="subtotal-divider">/</span> 						<span className="woodmart-cart-subtotal"><span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>807.00</span></span>
-                      </span> </span> </a>
-                </div>
+                <Cart onRef={ref => (this.child = ref)}>
+                <div
+          className="woodmart-shopping-cart woodmart-cart-design-2 woodmart-cart-alt cart-widget-opener"
+          onClick={this.onClick}
+        >
+          <span className="woodmart-cart-wrapper">
+            <span className="woodmart-cart-icon" />
+            <span className="woodmart-cart-totals">
+              <span className="woodmart-cart-number">
+               {this.store.state.item} <span>items</span>
+              </span>
+              <span className="subtotal-divider">/</span>
+              <span className="woodmart-cart-subtotal">
+                <span className="woocommerce-Price-amount amount">
+                  <span className="woocommerce-Price-currencySymbol">$</span>
+                  807.00
+                </span>
+              </span>
+            </span>{" "}
+          </span>
+        </div>
+                  </Cart>
               </div>
               <div className="whb-column whb-mobile-left whb-hidden-lg">
                 <div className="woodmart-burger-icon mobile-nav-icon whb-mobile-nav-icon mobile-style-text"> <span className="woodmart-burger" /> <span className="woodmart-burger-label">Menu</span></div>
@@ -169,11 +202,14 @@ export default ({ counter }) =>  (
                 </div>
               </div>
               <div className="whb-column whb-mobile-right whb-hidden-lg">
-                <div className="woodmart-shopping-cart woodmart-cart-design-5 woodmart-cart-alt cart-widget-opener"> <a href="https://woodmart.xtemos.com/cart/demo/retail/"> <span className="woodmart-cart-wrapper"> <span className="woodmart-cart-icon"> </span> <span className="woodmart-cart-totals"> 						<span className="woodmart-cart-number">3 <span>items</span></span>
+              <Cart onRef={ref => (this.child = ref)}>
+                <div className="woodmart-shopping-cart woodmart-cart-design-5 woodmart-cart-alt cart-widget-opener" onClick={this.onClick}> <span className="woodmart-cart-wrapper"> <span className="woodmart-cart-icon"> </span> <span className="woodmart-cart-totals"> 						<span className="woodmart-cart-number">3 <span>items</span></span>
                         <span className="subtotal-divider">/</span> 						<span className="woodmart-cart-subtotal"><span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>807.00</span></span>
-                      </span> </span> </a>
+                      </span> </span> 
                 </div>
+</Cart>
               </div>
+              
             </div>
           </div>
         </div>
@@ -183,4 +219,7 @@ export default ({ counter }) =>  (
     </header>
   </div>      
 )
+  }
+}
 
+export default connect(Header)

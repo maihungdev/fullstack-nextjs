@@ -12,6 +12,7 @@ export default class DefaultDocument extends Document {
             <meta charSet='utf-8' />
             <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
             <link rel='stylesheet' type='text/css' href='/static/header.css' />
+            <link rel='stylesheet' type='text/css' href='/static/cart.css' />
             </Head>
           <body>
             <Main />
