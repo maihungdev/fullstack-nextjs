@@ -1,20 +1,20 @@
 import React from 'react';
 import Category from '../components/client/category/Category';
-
-export default class CategoryPage extends React.Component {
+import { connect } from '../store'
+class CategoryPage extends React.Component {
   static async getInitialProps({ query }) {
+    const id = query.id;
     const slug = query.slug;
-    return {slug}
+    return {id, slug}
   }
   render() {
-    const { slug } = this.props;
-    {
-      console.log(this.props.slug);
-    }
+    const { id, slug } = this.props;
     return (
       <>
-      <Category title = {slug} />
-        </>
+      <Category title={id} id={id}/>
+      </>
     );
   }
 }
+
+export default CategoryPage

@@ -3,7 +3,7 @@ import { Container, Subscribe, Provider } from 'unstated'
 class Store extends Container {
   // Default state
   state = {
-    githubUsername: 'google',
+    category: '',
     item: 0,
     showCart: false,
     info: []
@@ -15,9 +15,9 @@ class Store extends Container {
     this.setState(newState, () => this.setInitialState = () => {})
   }
 
-  changeUsername = (newValue) => {
+  setCategory = (newValue) => {
     this.setState(prevState => ({
-      githubUsername: newValue
+      category: newValue
     }))
   }
   

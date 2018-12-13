@@ -7,9 +7,9 @@ const getAllCategory = gql`
   {
     viewer {
       categoryList {
-        _id
-        slug
         name
+        slug
+        category_id
       }
     }
   }
@@ -35,7 +35,7 @@ class ListCategory extends Component {
                     <>
                     {viewer && viewer.categoryList.map(
                         item => {
-                            return <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186 item-level-1" key={item._id}><Link route="category" slug={item.slug}><a href="#" className="woodmart-nav-link"><span className="nav-link-text">{item.name}</span></a></Link></li>
+                            return <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186 item-level-1" key={item._id}><Link route="category" id={item.category_id} slug={item.slug}><a href="#" className="woodmart-nav-link"><span className="nav-link-text">{item.name}</span></a></Link></li>
                         }
                     )}
                     </>

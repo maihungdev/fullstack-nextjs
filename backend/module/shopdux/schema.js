@@ -33,10 +33,11 @@ const fields = {
   category: CategoryTC.getResolver('findOne'),
   categoryList: CategoryTC.getResolver('findMany'),
   categoryConnection: CategoryTC.getResolver('connection'),
-
-  product: ProductTC.getResolver('findOne'),
-  productsList: ProductTC.getResolver('findMany'),
-  productsPagination: ProductTC.getResolver("pagination"),
+  
+  productById: ProductTC.getResolver('findById'),
+  productOne: ProductTC.getResolver('findOne'),
+  productList: ProductTC.getResolver('findMany'),
+  productPagination: ProductTC.getResolver("pagination"),
   productConnection: ProductTC.getResolver('connection'),
 
   customer: CustomerTC.getResolver('findOne'),

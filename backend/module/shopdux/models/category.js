@@ -9,6 +9,10 @@ export const CategorySchema = new mongoose.Schema(
     _id:{
       type: mongoose.Schema.Types.ObjectId
     },
+    category_id:{
+      type: String,
+      unique: true
+    },
     name: {
       type: String
     },
@@ -20,7 +24,7 @@ export const CategorySchema = new mongoose.Schema(
       type: String,
     },
     parent_id: {
-      type: mongoose.Schema.Types.ObjectId
+      type: String
     },
     enabled: Boolean,
   },
@@ -36,7 +40,7 @@ export const CategoryTC = composeWithRelay(composeWithMongoose(Category));
 CategoryTC.addRelation('product', {
   resolver: () => ProductTC.getResolver('findMany'),
   prepareArgs: {
-    filter: source => ({ category_id: source._id }),
+    filter: source => ({ category_id: source.category_id }),
     skip: null,
     sort: null,
   },

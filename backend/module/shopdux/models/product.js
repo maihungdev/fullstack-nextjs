@@ -85,8 +85,12 @@ export const productsSchema = new mongoose.Schema(
     vendor_id: {
       type: mongoose.Schema.Types.ObjectId,
     },
+    product_id: {
+      type: String,
+      unique: true
+    },
     category_id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String
     },
     category_ids: [{
       type: mongoose.Schema.Types.ObjectId
@@ -150,7 +154,7 @@ export const ProductTC = composeWithRelay(composeWithMongoose(products));
 ProductTC.addRelation('category', {
   resolver: () => CategoryTC.getResolver('findOne'),
   prepareArgs: {
-    filter: source => ({ _id: source.category_id }),
+    filter: source => ({ category_id: source.category_id }),
     skip: null,
     sort: null,
   },

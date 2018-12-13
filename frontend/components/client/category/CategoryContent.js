@@ -78,7 +78,7 @@ export default class CategoryContent extends Component {
         </div>
         <div className="woodmart-active-filters" />
         <div className="woodmart-shop-loader hidden-loader hidden-from-top" style={{marginLeft: '138px'}} />
-        <CategoryGrid/>
+        <CategoryGrid id={this.props.id}/>
         <div className="products-footer">
           <nav className="woocommerce-pagination">
             <ul className="page-numbers">
