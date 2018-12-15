@@ -13,7 +13,7 @@ export default class Category extends Component {
           
           <div className="container">
             <div className="row content-layout-wrapper">
-            <CategoryContent id={this.props.id}/>
+            <CategoryContent/>
             <CategorySidebar/>
             </div>
           </div>

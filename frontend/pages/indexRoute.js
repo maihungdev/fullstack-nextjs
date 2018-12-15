@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from '../routes'
 export default () => (
+  <>
   <ul>
     <li><Link route="character" id="1"><a>Luke Skywalker</a></Link></li>
     <li><Link route="character" id="2"><a>C-3PO</a></Link></li>
@@ -12,4 +13,5 @@ export default () => (
       </Link>
     </li>
   </ul>
+  </>
 )

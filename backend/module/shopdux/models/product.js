@@ -22,7 +22,8 @@ export const Images = new mongoose.Schema(
     id: mongoose.Schema.Types.ObjectId,
     alt: String,
     position: Number,
-    filename: String
+    filename: String,
+    url: String
   },
   {
     _id: false

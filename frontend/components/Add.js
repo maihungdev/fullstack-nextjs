@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from '../store'
 
 
 class Add extends Component {

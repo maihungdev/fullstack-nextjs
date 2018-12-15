@@ -1,37 +1,42 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-
+import { Skeleton } from 'antd';
 const getInfoProduct = gql`
-  query getInfoProduct($id: MongoID!) {
-    viewer {
-      productById(_id: $id) {
-        name
-        product_id
-        slug
-        sale_price
-        regular_price
-      }
+query getInfoProduct($id : MongoID!){
+  viewer {
+    productById(_id: $id) {
+      name
+      product_id
+      slug
+      sale_price
+      regular_price
+      images {
+        url
+      } 
     }
   }
+}
 `;
-
 export default class CategoryItem extends Component {
+  constructor(props) {
+    super(props);
+  }  
   render() {
     const { id } = this.props;
-    console.log(id);
     return (
       <>
         <Query query={getInfoProduct} variables={{ id }}>
-          {({ data }) => {
+          {({ data, loading, error }) => {
             const { viewer } = data;
-            console.log(viewer);
+            if (loading) return <div
+            className="product-grid-item product without-stars product-with-swatches quick-shop-on quick-view-on woodmart-hover-alt  col-6 col-sm-4 col-md-3 col-lg-3 product-in-grid post-1087 type-product status-publish has-post-thumbnail product_cat-furniture instock sale featured shipping-taxable purchasable product-type-variable has-default-attributes hover-width-small"
+          ><Skeleton/></div>
+            if (error) return <div>Error</div>
             return (
               <>
                 <div
                   className="product-grid-item product without-stars product-with-swatches quick-shop-on quick-view-on woodmart-hover-alt  col-6 col-sm-4 col-md-3 col-lg-3 product-in-grid post-1087 type-product status-publish has-post-thumbnail product_cat-furniture instock sale featured shipping-taxable purchasable product-type-variable has-default-attributes hover-width-small"
-                  data-loop={11}
-                  data-id={1087}
                 >
                   <div className="product-element-top">
                     <a
@@ -45,28 +50,10 @@ export default class CategoryItem extends Component {
                       <img
                         width={430}
                         height={491}
-                        src="https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8.jpg"
+                        src={viewer.productById.images[0].url}
                         className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt
-                        srcSet="https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8.jpg 700w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-131x150.jpg 131w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-263x300.jpg 263w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-88x100.jpg 88w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-430x490.jpg 430w"
-                        sizes="(max-width: 430px) 100vw, 430px"
                       />
                     </a>
-                    <div className="hover-img">
-                      {" "}
-                      <a href="https://woodmart.xtemos.com/shop/furniture/eames-lounge-chair/demo/digitals/">
-                        {" "}
-                        <img
-                          width={430}
-                          height={491}
-                          src="https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2.jpg"
-                          className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                          alt
-                          srcSet="https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2.jpg 700w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2-131x150.jpg 131w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2-263x300.jpg 263w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2-88x100.jpg 88w, https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2016/09/product-furniture-8-2-430x490.jpg 430w"
-                          sizes="(max-width: 430px) 100vw, 430px"
-                        />{" "}
-                      </a>
-                    </div>
                   </div>
                   <h3 className="product-title">
                     <a href="https://woodmart.xtemos.com/shop/furniture/eames-lounge-chair/demo/digitals/">
@@ -95,7 +82,6 @@ export default class CategoryItem extends Component {
                           </ins>
                         </span>
                         <div className="btn-add-swap">
-                          {" "}
                           <a
                             href="https://woodmart.xtemos.com/shop/furniture/eames-lounge-chair/demo/digitals/"
                             data-quantity={1}
@@ -105,7 +91,7 @@ export default class CategoryItem extends Component {
                             aria-label="Select options for “Eames lounge chair”"
                             rel="nofollow"
                           >
-                            <span>Select options</span>
+                            <span>Add to cart</span>
                           </a>
                         </div>
                       </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from '../store'
 import Cart from './Cart';
 import ListCategory from './client/header/ListCategory';
 
@@ -151,7 +150,7 @@ class Header extends Component {
             <span className="woodmart-cart-icon" />
             <span className="woodmart-cart-totals">
               <span className="woodmart-cart-number">
-               {this.store.state.item} <span>items</span>
+               11 <span>items</span>
               </span>
               <span className="subtotal-divider">/</span>
               <span className="woodmart-cart-subtotal">
@@ -194,4 +193,4 @@ class Header extends Component {
   }
 }
 
-export default connect(Header)
+export default Header

@@ -23,6 +23,9 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "isomorphic-unfetch": "^3.0.0",
+    "mobx": "^5.8.0",
+    "mobx-react": "^5.4.3",
+    "mobx-state-tree": "^3.9.0",
     "mongodb": "^3.1.10",
     "nanoid": "^2.0.0",
     "nedb": "^1.8.0",
@@ -40,10 +43,9 @@
     "react": "^16.6.3",
     "react-apollo": "^2.3.2",
     "react-dom": "^16.6.3",
+    "react-lazyload": "^2.3.0",
     "react-persist": "^1.0.2",
-    "slug": "^0.9.3",
-    "unstated": "^2.1.1",
-    "unstated-persist": "0.0.3"
+    "slug": "^0.9.3"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.2.0"

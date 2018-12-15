@@ -1,5 +1,4 @@
 import { Drawer, Button } from 'antd';
-import { connect } from '../store'
 import Category from '../components/client/category/Category';
 class Test extends React.Component {
   constructor(props) {

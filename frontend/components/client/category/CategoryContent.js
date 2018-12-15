@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import CategoryGrid from './CategoryGrid';
 
 export default class CategoryContent extends Component {
+  constructor(props) {
+    super(props);
+  }  
   render() {
     return (
         <div className="site-content shop-content-area col-lg-9 col-12 col-md-9 order-md-last description-area-before content-with-products" role="main">
@@ -78,7 +81,7 @@ export default class CategoryContent extends Component {
         </div>
         <div className="woodmart-active-filters" />
         <div className="woodmart-shop-loader hidden-loader hidden-from-top" style={{marginLeft: '138px'}} />
-        <CategoryGrid id={this.props.id}/>
+        <CategoryGrid />
         <div className="products-footer">
           <nav className="woocommerce-pagination">
             <ul className="page-numbers">
