@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CategoryGrid from './CategoryGrid';
-
 export default class CategoryContent extends Component {
   constructor(props) {
     super(props);

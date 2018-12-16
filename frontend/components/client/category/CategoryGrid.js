@@ -4,18 +4,35 @@ import { inject, observer } from 'mobx-react'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import LazyLoad from 'react-lazyload';
+import { Skeleton } from 'antd';
 const CategoryItem = dynamic(() => import('./CategoryItem'), {
-  loading: () => <p>...</p>
+  loading: () => <Skeleton active />
 })
 const allProductCategory = gql`
-query allProductCategory($category_id: String!){
+query allProductCategory($category_id: String!)
+{
   viewer{
-    productList(filter: {category_id: $category_id}){
-      _id
+    productPagination(filter:{category_id: $category_id}){
+      count
+      items {
+        _id
+        options {
+          name
+        }
+      }
+      pageInfo {
+        pageCount
+        itemCount
+        hasNextPage
+        hasPreviousPage
+      }
     }
   }
 }
 `;
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
 @inject('store')
 @observer
 export default class CategoryGrid extends Component {
@@ -31,11 +48,11 @@ export default class CategoryGrid extends Component {
         {
             ({data, loading, error}) => {
                 const { viewer } = data;
-                if (loading) return <div>Loading !!!</div>
+                if (loading) return <Skeleton active />
                 if (error) return <div>Error</div>
                 return( <>
                   {viewer &&
-                    viewer.productList.map(item => {
+                    viewer.productPagination.items.map(item => {
                       return <LazyLoad><CategoryItem id={item._id}/></LazyLoad>;
                     })}
                     </>

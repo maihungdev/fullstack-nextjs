@@ -31,7 +31,7 @@ export default class CategoryItem extends Component {
             const { viewer } = data;
             if (loading) return <div
             className="product-grid-item product without-stars product-with-swatches quick-shop-on quick-view-on woodmart-hover-alt  col-6 col-sm-4 col-md-3 col-lg-3 product-in-grid post-1087 type-product status-publish has-post-thumbnail product_cat-furniture instock sale featured shipping-taxable purchasable product-type-variable has-default-attributes hover-width-small"
-          ><Skeleton/></div>
+          ><Skeleton active /></div>
             if (error) return <div>Error</div>
             return (
               <>

@@ -6,7 +6,7 @@
 // MULTI SCHEMA MODE IN ONE SERVER
 // import { SchemaComposer } from 'graphql-compose';
 // const schemaComposer = new SchemaComposer();
-
+import { Resolver } from 'graphql-compose';
 import { schemaComposer, composeWithRelay } from './schemaComposer';
 import { CategoryTC } from './models/category';
 import { CustomerTC } from './models/customer';
@@ -21,6 +21,7 @@ import allowOnlyForLocalhost from './auth/allowOnlyForLocalhost';
 composeWithRelay(schemaComposer.Query);
 
 const ViewerTC = schemaComposer.getOrCreateTC('Viewer');
+
 schemaComposer.Query.addFields({
   viewer: {
     type: ViewerTC.getType(),
@@ -62,7 +63,6 @@ const fields = {
 };
 
 ViewerTC.addFields(fields);
-
 
 schemaComposer.Mutation.addFields({
   ...allowOnlyForLocalhost({

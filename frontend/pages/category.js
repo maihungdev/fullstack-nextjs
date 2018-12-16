@@ -1,6 +1,11 @@
 import React from 'react';
-import Category from '../components/client/category/Category';
 import { inject, observer } from 'mobx-react'
+import dynamic from 'next/dynamic'
+import { Skeleton } from 'antd';
+const  Category = dynamic(() => import('../components/client/category/Category'), {
+  loading: () => <Skeleton active />
+})
+
 @inject('store')
 @observer
 class CategoryPage extends React.Component {
