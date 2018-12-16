@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ListCategory from '../widget/ListCategory';
 
 export default class CategorySidebar extends Component {
   render() {
@@ -7,13 +8,7 @@ export default class CategorySidebar extends Component {
         <div className="widget-heading"> <a href="#" className="close-side-widget">close</a></div>
         <div className="sidebar-inner woodmart-sidebar-scroll">
           <div className="widget-area woodmart-sidebar-content">
-            <div id="woocommerce_product_categories-4" className="woodmart-widget widget sidebar-widget woocommerce widget_product_categories">
-              <h5 className="widget-title">Product Categories</h5>
-              <ul className="product-categories">
-                <li className="cat-item cat-item-13"><a href="https://woodmart.xtemos.com/product-category/accessories/demo/digitals/">Accessories</a> <span className="count">12</span></li>
-                <li className="cat-item cat-item-184"><a href="https://woodmart.xtemos.com/product-category/uncategorized/demo/digitals/">Uncategorized</a> <span className="count">1</span></li>
-              </ul>
-            </div>
+            <ListCategory/>
             <div id="woocommerce_price_filter-4" className="woodmart-widget widget sidebar-widget woocommerce widget_price_filter">
               <h5 className="widget-title">Filter by price</h5>
               <form method="get" action="https://woodmart.xtemos.com/shop/demo/digitals/">

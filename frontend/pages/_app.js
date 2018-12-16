@@ -2,11 +2,11 @@ import React from "react";
 import App, { Container } from "next/app";
 import { Provider } from "mobx-react";
 import { getSnapshot } from "mobx-state-tree";
-import { initializeStore } from "../stores/store";
+import { initializeStore } from "../lib/stores/store";
 
 import NProgress from "nprogress";
 import Router from "next/router";
-import withApollo from "../lib/withApollo";
+import withApollo from "../lib/apollo/withApollo";
 import { ApolloProvider } from "react-apollo";
 import NextSeo from "next-seo";
 

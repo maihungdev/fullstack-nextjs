@@ -19,7 +19,7 @@ const getAllCategory = gql`
 const allPostsQuery = gql`
   {
     viewer {
-      productsPagination {
+      productPagination {
         count
         items {
           _id
@@ -105,7 +105,7 @@ class Index extends Component {
             return (
               <div>
                 {viewer &&
-                  viewer.productsPagination.items.map(post => {
+                  viewer.productPagination.items.map(post => {
                     return (
                       <p key={post._id}>
                         {post.name} {post.slug}
@@ -114,7 +114,7 @@ class Index extends Component {
                   })}
                 <br />
                 <Pagination
-                  total={viewer.productsPagination.count}
+                  total={viewer.productPagination.count}
                   showTotal={(total, range) =>
                     `${range[0]}-${range[1]} of ${total} items`
                   }

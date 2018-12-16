@@ -1,11 +1,34 @@
 import React, { Component } from 'react'
 import CategoryGrid from './CategoryGrid';
+import { Pagination } from "antd";
+import Router from '../../../routes'
+import { inject, observer } from 'mobx-react'
+@inject('store')
+@observer
 export default class CategoryContent extends Component {
   constructor(props) {
     super(props);
   }  
+  state = {
+    current: 1,
+  }
+  onChange = (page) => {
+    Router.pushRoute('category', {
+      id: this.props.store.category_id,
+      slug: this.props.store.category_slug,
+      queryParams: {
+        page: page
+      }
+    })
+    this.setState({
+      current: page,
+    });
+
+  }
   render() {
+    const {current} = this.state;      
     return (
+      <>
         <div className="site-content shop-content-area col-lg-9 col-12 col-md-9 order-md-last description-area-before content-with-products" role="main">
         <div className="shop-loop-head">
           <div className="woodmart-woo-breadcrumbs">
@@ -80,23 +103,19 @@ export default class CategoryContent extends Component {
         </div>
         <div className="woodmart-active-filters" />
         <div className="woodmart-shop-loader hidden-loader hidden-from-top" style={{marginLeft: '138px'}} />
-        <CategoryGrid />
-        <div className="products-footer">
-          <nav className="woocommerce-pagination">
-            <ul className="page-numbers">
-              <li><span aria-current="page" className="page-numbers current">1</span></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/2/?per_row=4&shop_view=grid&opt=hover_icons_cart">2</a></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/3/?per_row=4&shop_view=grid&opt=hover_icons_cart">3</a></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/4/?per_row=4&shop_view=grid&opt=hover_icons_cart">4</a></li>
-              <li><span className="page-numbers dots">…</span></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/46/?per_row=4&shop_view=grid&opt=hover_icons_cart">46</a></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/47/?per_row=4&shop_view=grid&opt=hover_icons_cart">47</a></li>
-              <li><a className="page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/48/?per_row=4&shop_view=grid&opt=hover_icons_cart">48</a></li>
-              <li><a className="next page-numbers" href="https://woodmart.xtemos.com/shop/demo/digitals/page/2/?per_row=4&shop_view=grid&opt=hover_icons_cart">→</a></li>
-            </ul>
-          </nav>
-        </div>
+        <CategoryGrid current={current}/>
+        <Pagination
+                  total= "5"
+                  showTotal={(total, range) =>
+                    `${range[0]}-${range[1]} of ${total} items`
+                  }
+                  current={this.state.current}
+                  onChange={this.onChange}
+                  pageSize={2}
+                  defaultCurrent={1}
+                />
       </div>      
+      </>
     )
   }
 }

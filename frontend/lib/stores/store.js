@@ -22,6 +22,8 @@ const Todo = types
 const Store = types
   .model({
     category_id: types.string,
+    category_slug: types.string,
+    category_page: types.string,
     lastUpdate: types.Date,
     light: false,
     todos: types.array(Todo)
@@ -46,26 +48,30 @@ const Store = types
       clearInterval(timer)
     }
 
-    function setCategory (category_id) {
+    function setCategory (category_id, category_slug) {
       self.category_id = category_id;
+      self.category_slug = category_slug;
+    }
+
+    function setPageCategory (category_page) {
+      self.category_page = category_page;
     }
     
-
-    return { start, stop, update, setCategory }
+    return { start, stop, update, setCategory, setPageCategory }
   })
 
 
 
 export function initializeStore (isServer, snapshot = null) {
   if (isServer) {
-    store = Store.create({ category_id: '',lastUpdate: Date.now(), todos: [
+    store = Store.create({ category_id: '', category_slug: '',category_page: '',lastUpdate: Date.now(), todos: [
       {
           title: "Get coffee"
       }
   ] })
   }
   if (store === null) {
-    store = Store.create({ category_id: '',lastUpdate: Date.now(), todos: [
+    store = Store.create({ category_id: '', category_slug: '',category_page: '',lastUpdate: Date.now(), todos: [
       {
           title: "Get coffee"
       }

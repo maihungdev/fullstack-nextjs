@@ -1,19 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from '../../../routes'
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import ListCategory_gql from "../../../api/store/queries/category/ListCategory";
 
-const getAllCategory = gql`
-  {
-    viewer {
-      categoryList {
-        name
-        slug
-        category_id
-      }
-    }
-  }
-`;
 
 class ListCategory extends Component {
   render() {
@@ -27,7 +16,7 @@ class ListCategory extends Component {
         <div className="sub-menu-dropdown color-scheme-dark">
           <div className="container">
             <ul className="sub-menu color-scheme-dark">
-            <Query query={getAllCategory}>
+            <Query query={ListCategory_gql}>
         {
             ({data}) => {
                 const { viewer } = data;
