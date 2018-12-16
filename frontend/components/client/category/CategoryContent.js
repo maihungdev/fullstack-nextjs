@@ -1,32 +1,14 @@
 import React, { Component } from 'react'
 import CategoryGrid from './CategoryGrid';
-import { Pagination } from "antd";
-import Router from '../../../routes'
-import { inject, observer } from 'mobx-react'
-@inject('store')
-@observer
+
+
+
 export default class CategoryContent extends Component {
   constructor(props) {
     super(props);
   }  
-  state = {
-    current: 1,
-  }
-  onChange = (page) => {
-    Router.pushRoute('category', {
-      id: this.props.store.category_id,
-      slug: this.props.store.category_slug,
-      queryParams: {
-        page: page
-      }
-    })
-    this.setState({
-      current: page,
-    });
-
-  }
+  
   render() {
-    const {current} = this.state;      
     return (
       <>
         <div className="site-content shop-content-area col-lg-9 col-12 col-md-9 order-md-last description-area-before content-with-products" role="main">
@@ -103,17 +85,7 @@ export default class CategoryContent extends Component {
         </div>
         <div className="woodmart-active-filters" />
         <div className="woodmart-shop-loader hidden-loader hidden-from-top" style={{marginLeft: '138px'}} />
-        <CategoryGrid current={current}/>
-        <Pagination
-                  total= "5"
-                  showTotal={(total, range) =>
-                    `${range[0]}-${range[1]} of ${total} items`
-                  }
-                  current={this.state.current}
-                  onChange={this.onChange}
-                  pageSize={2}
-                  defaultCurrent={1}
-                />
+        <CategoryGrid />
       </div>      
       </>
     )

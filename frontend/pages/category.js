@@ -11,7 +11,7 @@ const  Category = dynamic(() => import('../components/client/category/Category')
 class CategoryPage extends React.Component {
   constructor(props) {
     super(props)
-  }  
+  }    
   static async getInitialProps({ query }) {                       
     const id = query.id;
     const slug = query.slug;
@@ -19,7 +19,7 @@ class CategoryPage extends React.Component {
     return {id, slug, page}
   }    
   render() {    
-    this.props.page ? this.props.store.setPageCategory(this.props.page) : null
+    this.props.page ? this.props.store.setPageCategory(this.props.page) : this.props.store.setPageCategory("1")
     this.props.id ? this.props.store.setCategory(this.props.id, this.props.slug) : null
     return (
       <>
