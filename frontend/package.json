@@ -19,6 +19,7 @@
     "babel-plugin-import": "^1.11.0",
     "connect-mongo": "^2.0.3",
     "dotenv": "^6.1.0",
+    "env-hoc": "^1.2.7",
     "express-session": "^1.15.6",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
@@ -45,6 +46,7 @@
     "react-dom": "^16.6.3",
     "react-lazyload": "^2.3.0",
     "react-persist": "^1.0.2",
+    "react-responsive": "^6.0.1",
     "slug": "^0.9.3"
   },
   "devDependencies": {

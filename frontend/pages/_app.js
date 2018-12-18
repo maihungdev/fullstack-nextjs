@@ -4,6 +4,7 @@ import { Provider } from "mobx-react";
 import { getSnapshot } from "mobx-state-tree";
 import { initializeStore } from "../lib/stores/store";
 
+
 import NProgress from "nprogress";
 import Router from "next/router";
 import withApollo from "../lib/apollo/withApollo";
@@ -13,9 +14,7 @@ import NextSeo from "next-seo";
 // import your default seo configuration
 import SEO from "../next-seo.config";
 
-//import HeaderMain from "../components/HeaderMain";
-import FooterMain from "../components/FooterMain";
-import { Header } from "../components";
+import Header from "../components/desktop/header/Header";
 
 Router.events.on("routeChangeStart", url => {
   console.log(`Loading: ${url}`);
@@ -23,6 +22,9 @@ Router.events.on("routeChangeStart", url => {
 });
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
+
+import MediaQuery from "react-responsive";
+
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -58,9 +60,15 @@ class MyApp extends App {
         <NextSeo config={SEO} />
         <Provider store={this.store}>
           <ApolloProvider client={apolloClient}>
-            <Header />
+            {/* <Header /> */}
+            <MediaQuery query="(min-device-width: 1224px)">
+            <Header/>
             <Component {...pageProps} />
-            <FooterMain />
+            </MediaQuery>
+            <MediaQuery query="(max-device-width: 1224px)">
+              <Component {...pageProps} />
+            </MediaQuery>
+            {/* <FooterMain /> */}
           </ApolloProvider>
         </Provider>
       </Container>

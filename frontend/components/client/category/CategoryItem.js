@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
 import { Skeleton } from 'antd';
-import Link from "../../../routes";
+import { Link } from '../../../routes'
 import productGridItem_gql from "../../../api/store/queries/product/productGridItem";
 
 
@@ -27,7 +26,7 @@ export default class CategoryItem extends Component {
                   className="product-grid-item product without-stars product-with-swatches quick-shop-on quick-view-on woodmart-hover-alt  col-6 col-sm-4 col-md-3 col-lg-3 product-in-grid post-1087 type-product status-publish has-post-thumbnail product_cat-furniture instock sale featured shipping-taxable purchasable product-type-variable has-default-attributes hover-width-small"
                 >
                   <div className="product-element-top">
-                  
+                  <Link route="product" id={viewer.productById.product_id} slug={viewer.productById.slug}>
                     <a
                       href="#"
                       className="product-image-link"
@@ -43,7 +42,7 @@ export default class CategoryItem extends Component {
                         className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                       />
                     </a>
-             
+                    </Link>
                   </div>
                   <h3 className="product-title">
                     <a href="https://woodmart.xtemos.com/shop/furniture/eames-lounge-chair/demo/digitals/">

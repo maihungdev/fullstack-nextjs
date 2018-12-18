@@ -1,0 +1,156 @@
+body{margin:0;}
+header{display:block;}
+a{background-color:transparent;}
+a:active,a:hover{outline:0;}
+button,input{color:inherit;font:inherit;margin:0;}
+button{overflow:visible;}
+button{text-transform:none;}
+button{-webkit-appearance:button;cursor:pointer;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+@media print{
+*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important;}
+a,a:visited{text-decoration:underline;}
+a[href]:after{content:" (" attr(href) ")";}
+a[href^="javascript:"]:after{content:"";}
+}
+body{background-color:#fff;}
+*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box;}
+body{font-size:14px;color:#333;}
+button,input{font-family:inherit;font-size:inherit;line-height:inherit;}
+a{text-decoration:none;}
+a:focus,a:hover{color:#23527c;}
+a:focus{outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px;}
+ul{margin-top:0;}
+ul{margin-bottom:10px;}
+@media (min-width:768px){
+.container{width:750px;}
+}
+.container:after,.container:before{display:table;content:" ";}
+.container{margin-right:auto;margin-left:auto;}
+.container{padding-left:15px;padding-right:15px;}
+.container:after{clear:both;}
+@media (min-width:992px){
+.container{width:970px;}
+}
+@media (min-width:1200px){
+.container{width:1170px;}
+}
+.hide{display:none!important;}
+.tikicon{display:inline-block;vertical-align:middle;}
+.tikicon.icon-arrow-down{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-439px -171px;width:12px;height:6px;}
+.tikicon.icon-booking_dot_com{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-439px 0;width:13px;height:18px;}
+.tikicon.icon-cart{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-327px -283px;width:19px;height:18px;}
+.tikicon.icon-clearance-sale{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-416px -138px;width:18px;height:18px;}
+.tikicon.icon-exclusive{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-33px -309px;width:28px;height:29px;}
+.tikicon.icon-gift-card{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-416px -115px;width:18px;height:18px;}
+.tikicon.icon-global-18{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-416px -184px;width:18px;height:18px;}
+.tikicon.icon-gotadi{width:18px;height:18px;background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);}
+.tikicon.icon-gotadi{background-position:-416px 0;}
+.tikicon.icon-location-picker{width:24px;height:24px;background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);}
+.tikicon.icon-location-picker{background-position:-387px -232px;}
+.tikicon.icon-notification{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-348px -343px;width:24px;height:24px;}
+.tikicon.icon-return{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-354px -99px;width:28px;height:28px;}
+.tikicon.icon-search{width:14px;height:15px;background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);}
+.tikicon.icon-search{background-position:-271px -372px;}
+.tikicon.icon-tracking,.tikicon.icon-user{width:22px;height:22px;background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);}
+.tikicon.icon-tracking{background-position:-82px -372px;}
+.tikicon.icon-user{background-position:-55px -372px;}
+.tikicon.icon-uu-dai-hop-tac{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-416px -46px;width:18px;height:18px;}
+.tikicon.icon-header_2h{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);width:28px;}
+.tikicon.icon-header_2h{background-position:-354px -33px;height:28px;}
+.tikicon.icon-money_bag{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-109px -372px;width:18px;height:19px;}
+.tikicon.icon-tiki_short{background-image:url(https://salt.tikicdn.com/desktop/img/sprite.png?v=1519811185455);background-position:-118px -245px;width:50px;height:33px;}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){
+.tikicon.icon-arrow-down,.tikicon.icon-booking_dot_com,.tikicon.icon-cart,.tikicon.icon-clearance-sale,.tikicon.icon-exclusive,.tikicon.icon-gift-card,.tikicon.icon-global-18,.tikicon.icon-gotadi,.tikicon.icon-header_2h,.tikicon.icon-location-picker,.tikicon.icon-money_bag,.tikicon.icon-notification,.tikicon.icon-return,.tikicon.icon-search,.tikicon.icon-tiki_short,.tikicon.icon-tracking,.tikicon.icon-user,.tikicon.icon-uu-dai-hop-tac{background-image:url(https://salt.tikicdn.com/desktop/img/sprite@2x.png?v=1519811185455);background-size:452px 417px;}
+}
+.container{max-width:none!important;}
+a{color:#007ff0;}
+a:focus,a:hover{color:rgba(0,127,240,.8);text-decoration:none;}
+body{min-height:100%;line-height:normal;font-family:Roboto,Helvetica,Arial,sans-serif;background:#f4f4f4;padding:0!important;}
+i.ico{font-family:icomoon!important;}
+input[placeholder]{text-overflow:ellipsis;}
+::-moz-placeholder{text-overflow:ellipsis;}
+input:-moz-placeholder{text-overflow:ellipsis;}
+input{text-overflow:ellipsis;}
+i.ico{font-weight:400;text-transform:none;line-height:1;font-style:normal;speak:none;font-variant:normal;}
+.ico-fire:before{content:"";}
+#header{font-family:Roboto,Helvetica,Arial,sans-serif;}
+#header input[type=text]{width:229px;max-width:100%;height:32px;border-radius:3px;font-size:13px;border:1px solid #efefef;padding:0 8px;color:#333;}
+#header input[type=text]:focus{border-color:#1ba8ff;}
+#header input[type=text]::-webkit-input-placeholder{color:#c7c7c7;font-size:13px;font-weight:400;}
+#header input[type=text]::-moz-placeholder{color:#c7c7c7;font-size:13px;font-weight:300;}
+#header input[type=text]:-ms-input-placeholder{color:#c7c7c7;font-size:13px;font-weight:300;}
+#header input[type=text]:-moz-placeholder{color:#c7c7c7;font-size:13px;font-weight:300;}
+#header .search-wrap{width:475.9px;height:40px;border-radius:4px;background-color:#fff;-webkit-box-shadow:0 1px 2px 0 rgba(98,98,98,.5);box-shadow:0 1px 2px 0 rgba(98,98,98,.5);}
+#header .search-wrap input[type=text]{height:40px;border:0;font-size:13px;-webkit-box-flex:1;-ms-flex:1;flex:1;}
+#header .search-wrap button[type=submit]{float:right;height:40px;border:0;font-size:14px;padding:0 16px;background:#EFF1F5;border-radius:0 4px 4px 0;cursor:pointer;font-weight:500;}
+.noti-item{cursor:pointer;}
+header#header{z-index:1000;position:relative; margin-bottom: 5px}
+header#header a{text-decoration:none;}
+header#header button,header#header input{outline:0;}
+header#header .right{float:right;}
+header#header .top-promo{background:#1d71ab;}
+header#header .top-promo .top-label,header#header .top-promo a.top-label{font-size:12px;color:#fff;font-weight:300;line-height:26px;display:inline-block;letter-spacing:.5px;margin:0 0 0 15px;vertical-align:middle;}
+header#header .top-promo .top-label:first-child,header#header .top-promo a.top-label:first-child{margin-left:0;}
+header#header .top-promo .ico{font-size:18px;vertical-align:sub;margin-right:5px;line-height:28px;}
+header#header .top-promo .ico-fire{color:#fdd835;}
+header#header .top-promo .tikicon.icon-gotadi{margin-right:3px;margin-top:-2px;}
+header#header .header-form-container{background:#189eff;padding:20px 0 16px;position:relative;z-index:3;}
+header#header .header-form-container a.logo{color:#fff;display:inline-block;vertical-align:top;margin-top:-1px;float:left;}
+header#header .header-form-container .form-search{display:inline-block;position:relative;z-index:1;float:left;}
+header#header .header-form-container .search-wrap{display:table;vertical-align:middle;width:100%;z-index:1;position:relative;}
+header#header .header-form-container .search-wrap .input{display:table-cell;width:calc(100% - 109px);max-width:none;float:left;}
+header#header .header-form-container .search-wrap .input .flex{display:-webkit-box;display:-ms-flexbox;display:flex;}
+header#header .header-form-container .search-wrap button[type=submit]{display:table-cell;width:auto;float:right;vertical-align:top;color:#4a4a4a;}
+header#header .header-link{float:right;position:relative;}
+header#header .header-link .item{color:#fff;font-size:12px;padding:6px 0 0 30px;position:relative;vertical-align:top;font-weight:400;line-height:14px;display:inline-block;letter-spacing:.9px;margin-left:25px;}
+header#header .header-link .item:first-child{margin-left:0;}
+header#header .header-link .item .tikicon.icon-notification{left:-3px;top:8px;}
+header#header .header-link .item .icon-style-1{font-size:22px;float:left;position:absolute;left:0;top:9px;}
+header#header .header-link #header-cart{display:inline-block;}
+header#header .header-link .item.header-cart{border:2px solid #fff;padding:8px 11px 8px 38px;border-radius:4px;margin-left:0;letter-spacing:.7px;font-weight:400;font-size:13px;vertical-align:middle;}
+header#header .header-link .item.header-cart .icon-cart{font-size:18px;left:8px;top:9px;position:absolute;}
+header#header .header-link .item.header-cart span.cart-count{color:#4a4a4a;background:#fdd835;height:20px;border-radius:2px;display:inline-block;text-align:center;line-height:20px;margin-left:9px;font-size:12px;padding:0 6px;font-weight:700;}
+header#header .header-link .user-profile{cursor:pointer;width:130px;}
+header#header .header-link .user-profile .loading{-webkit-animation:skeleton 1s ease infinite forwards;animation:skeleton 1s ease infinite forwards;display:inline-block;width:60px;height:9px;border-radius:5px;background-image:-webkit-gradient(linear,left top,right top,color-stop(0,#f6f7f8),color-stop(20%,#edeef1),color-stop(40%,#f6f7f8),to(#f6f7f8));background-image:linear-gradient(90deg,#f6f7f8 0,#edeef1 20%,#f6f7f8 40%,#f6f7f8);opacity:.2;}
+header#header .header-link .user-profile b{font-weight:400;width:90px;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+header#header .main-nav{background:#189eff;height:40px;padding:0 0 12px;position:relative;z-index:0;}
+header#header .main-nav .feature{letter-spacing:.6px;color:#fff;font-weight:300;font-size:12px;position:relative;margin-left:25px;display:inline-block;vertical-align:middle;padding-left:38px;line-height:16px;}
+header#header .main-nav .feature .tikicon{position:absolute;left:0;top:0;bottom:0;margin:auto 0;}
+header#header .main-nav .location-picker{margin-left:0;margin-right:10px;position:relative;padding-left:31px;font-size:12px;font-weight:300;width:210px;}
+header#header .main-nav .location-picker .text{cursor:pointer;max-height:32px;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;}
+header#header .main-nav .delivery-2h{margin-left:20px;}
+header#header .main-nav .recently{margin-left:40px;margin-right:7px;position:relative;padding-left:0;font-size:13px;}
+header#header .main-nav .recently .tikicon{font-size:6px;position:absolute;left:-20px;top:-1px;}
+.top-label{position:relative;}
+.top-label a{color:#fff;}
+.sell-with-tiki>a .tikicon{margin-right:4px;}
+.sell-with-tiki>a .tikicon.icon-arrow-down{margin-right:0;margin-left:4px;}
+.sell-with-tiki:hover .collapse{display:block;}
+.sell-with-tiki .collapse{display:none;position:absolute;top:28px;background:url(https://salt.tikicdn.com/assets/img/sell-with-tiki/bitmap@2x.png) 314px bottom no-repeat #fff;color:#4a4a4a;width:508px;right:0;-webkit-box-shadow:0 4px 12px 0 rgba(0,0,0,.28);box-shadow:0 4px 12px 0 rgba(0,0,0,.28);border-radius:0 0 4px 4px;padding:0 20px 25px;z-index:4;background-size:173px;}
+.sell-with-tiki .collapse:after{content:"";border-top:9px solid transparent;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:9px solid #fff;position:absolute;top:-18px;right:48px;}
+.sell-with-tiki .collapse ul{padding:12px 189px 0 0;list-style:none;}
+.sell-with-tiki .collapse ul li{font-size:13px;font-weight:400;position:relative;color:#4a4a4a;line-height:16px;margin-bottom:13px;}
+.sell-with-tiki .collapse ul li b{font-weight:500;}
+.sell-with-tiki .collapse .title{font-size:31px;margin:25px 0;}
+.sell-with-tiki a.register{border:none;color:#fff;white-space:nowrap;cursor:pointer;vertical-align:top;font-size:13px;padding:0 47px;line-height:40px;border-radius:5px;background:#ff3945;font-weight:300;letter-spacing:.5px;background-size:26px;display:inline-block;text-align:center;margin-top:25px;}
+.sell-with-tiki a.register:hover{opacity:.8;}
+b{font-weight:500!important;}
+.container{width:1270px!important;}
+header#header .header-form-container .form-search{width:570px;}
+header#header{min-width:1270px;}
+header#header .header-link .item{padding-left:34px;}
+header#header .header-form-container .search-wrap button[type=submit]{padding:0 11px 0 15px;}
+header#header .header-form-container .search-wrap button[type=submit] .tikicon{margin-right:3px;}
+header#header .header-form-container a.logo{margin-right:32px;}
+/*! CSS Used keyframes */
+@-webkit-keyframes skeleton{0%{background-position:-400px 0;}to{background-position:400px 0;}}
+@keyframes skeleton{0%{background-position:-400px 0;}to{background-position:400px 0;}}
+
+#loading {
+    position: absolute;
+    color: White;
+    top: 50%;
+    left: 50%;
+  }
+  

@@ -2,7 +2,12 @@ import React from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
 import { NextAuth } from 'next-auth/client';
-
+import { inject, observer } from 'mobx-react'
+import withEnv from 'env-hoc';
+ 
+@withEnv
+@inject('store')
+@observer
 export default class extends React.Component {
   static async getInitialProps({ req }) {
     return {
@@ -25,15 +30,20 @@ export default class extends React.Component {
         Router.push('/auth/error?action=signout');
       });
   }
-
+  // add user email user to store !!!
+ 
   render() {
-    return <SignInMessage {...this.props} />;
+    console.log('this.props:', this.props.env);
+    return (<>
+    <SignInMessage {...this.props} />
+    </>);
   }
 }
 
 export class SignInMessage extends React.Component {
   render() {
     if (this.props.session.user) {
+      this.props.session.user.email ? this.props.store.setEmailUser(this.props.session.user.email) : null      
       return (
         <React.Fragment>
           <p>

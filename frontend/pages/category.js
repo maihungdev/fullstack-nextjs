@@ -1,7 +1,9 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react'
 import dynamic from 'next/dynamic'
 import { Skeleton } from 'antd';
+
+import { inject, observer } from 'mobx-react'
+
 const  Category = dynamic(() => import('../components/client/category/Category'), {
   loading: () => <Skeleton active />
 })
